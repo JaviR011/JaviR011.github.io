@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<div class="fondo-transparente"></div>
+<div class="textoencima">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab unde odio atque animi minima libero officia possimus fugiat ex ducimus, nam hic aspernatur pariatur omnis tempore porro dolores inventore.</p>
+
+</div>
+
+    </div>
+    
+
+
+
+</body>
+<style>
+.imagen{
+    display: flex;
+    text-align: center;
+}
+
+.di1{
+
+}
+#id1{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px black;
+    padding-top: 20%;
+    opacity: 1;
+}
+
+#videoFondo{
+position: fixed;
+
+object-fit: cover;
+
+
+}
+
+
+
+
+
+.container{
+    position: relative; /*contenedor para la imagen*/
+    width: 100%;    
+}
+ .fondo-transparente{
+    position: absolute;
+    top: 0;
+    left: 0;
+    left: 100px;
+    right: 0;
+    width: 1000px;
+    height: 1000px;
+    background-image: url('chapu.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* opacidad del fondo */
+    z-index: 1;
+    }
+
+.textoencima{
+    top: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+</style>
+</html>

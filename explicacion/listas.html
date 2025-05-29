@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Todos los tipos de listas</h2>
+
+    <h3>Lista ordenada</h3>
+    <ol>
+        <li> elemento</li>
+ <li> elemento</li>
+ <li> elemento</li>
+    </ol>
+
+    <h3>listas desordenadas</h3>
+        <ul>
+        <li> elemento</li>
+        <li> elemento</li>
+        </ul>
+
+    <h3>listas de Definicion</h3>
+        <dl>
+            <dt>HTML</dt>
+            <dd> Lenguaje de marcado para crear paginas web</dd>
+            <dt>CSS</dt>
+            <dd> Lenguaje de estilos para dar formato a las paginas web</dd>
+            <dt>JavaScript</dt>
+            <dd> Lenguaje de programacion para crear interactividad en las paginas web</dd>
+
+        </dl>
+     <h3>listas de litas</h3>
+     <ol>
+            <li>Carnes <ul>
+                <li>Res</li>
+                <li>Pollo</li>
+                <li>Pescado</li>
+            </ul></li>
+            <li>Lacteos <ul>
+                <li>leche</li>
+                <li>queso</li>
+            </ul></li>
+     </ol>
+     <h3>Otra lista de listas</h3>
+     <dl>
+        <dt>Lista ordenada</dt>
+        <dd> <ol><li>elemento1</li> <li>elemento2</li></ol> </dd>
+        <dt>Lista desordenada</dt>
+        <dd> <ul><li>elemento1</li> <li>elemento2</li></ul> </dd>
+     </dl>
+<style>
+
+ul li::before{
+    content: "❣";
+}
+
+ul li{
+    list-style-type: none;
+}
+
+</style>
+
+</body>
+</html>

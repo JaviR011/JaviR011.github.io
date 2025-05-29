@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 150px);
+    grid-template-areas:
+      "D D D D"
+      "S S E E"
+      "S S A A"
+      "F F F F";
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .D { grid-area: D; background: #3498db; color: rgb(0, 0, 0); display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  .S { grid-area: S; background: #2ecc71; color: rgb(0, 0, 0); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+  .E { grid-area: E; background: #e67e22; color: rgb(0, 0, 0); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .A { grid-area: A; background: #9b59b6; color: rgb(0, 0, 0); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .F { grid-area: F; background: #34495e; color: rgb(0, 0, 0); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+</style>
+
+<div class="container">
+  <div class="D">D - Header</div>
+  <div class="S">S - Sidebar</div>
+  <div class="E">E - Content</div>
+  <div class="A">A - Ads</div>
+  <div class="F">F - Footer</div>
+</div>
+</body>
+</html>
