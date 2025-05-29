@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Barra lateral fija con contenido scrollable</title>
+<style>
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+  }
+html {
+  scroll-padding-top: 80px; /* Espacio para la barra superior */
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces */
+}
+
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+ /* BARRA superior Fija*/
+  .navbar {
+    display: flex;
+    position: fixed;       /* fija en la pantalla */
+    top: 0;          /* distancia desde la parte superior */
+    left: 0;
+    width: 100%;          /* ancho fijo */
+    margin-left: 250px;
+    height: 30px;         /* altura completa de la ventana */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
+
+  /* Barra lateral fija */
+  .sidebar {
+    position: fixed;       /* fija en la pantalla */
+    top: 0px;          /* distancia desde la parte superior */
+    left: 0;
+    width: 250px;          /* ancho fijo */
+    height: 100%;         /* altura completa de la ventana */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;      /* si hay mucho contenido, se hace scroll en la barra */
+  }
+
+  /* Contenido principal */
+  .content {
+    margin-left: 250px;    /* margen igual al ancho de la sidebar */
+    margin-top: 60px;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;      /* contenido tiene scroll vertical */
+    background-color: #f5f5f5;
+  }
+
+  /* Opcional: estilo para enlaces de la sidebar */
+  .sidebar a {
+    color: white;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  .navbar a {
+    color: white;
+    display: block;
+    margin: 0px ;
+    text-decoration: none;
+    padding-left: 30px;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<div class="navbar">
+  <p style="margin: 0;">menu superior </p>
+   <a href="#seccion1">Sección 1</a>
+    <a href="#seccion2">Sección 2</a>
+    <a href="#seccion3">Sección 3</a>
+    <a href="#seccion4">Sección 4</a>
+</div>
+  <div class="sidebar">
+    <h2>Menú lateral</h2>
+    <a href="#seccion1">Sección 1</a>
+    <a href="#seccion2">Sección 2</a>
+    <a href="#seccion3">Sección 3</a>
+    <a href="#seccion4">Sección 4</a>
+  </div>
+
+  <div class="content">
+    <h1 id="seccion1">Sección 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit.</p>
+    <p>Mucho contenido aquí para que puedas hacer scroll en esta área.</p>
+    <!-- Más contenido largo para scroll -->
+    <div style="height:1500px; background: linear-gradient(to bottom, #fff, #ccc);"></div>
+
+    <h1 id="seccion2">Sección 2</h1>
+    <p>Contenido adicional para la segunda sección.</p>
+    <div style="height:800px; background: linear-gradient(to bottom, #ccc, #eee);"></div>
+
+    <h1 id="seccion3">Sección 3</h1>
+    <p>Más contenido en esta tercera sección.</p>
+    <div style="height:500px; background: linear-gradient(to bottom, #eee, #fff);"></div>
+
+    <h1 id="seccion4">Sección 4</h1>
+    <p>Última sección del contenido.</p>
+    <div style="height:300px; background: linear-gradient(to bottom, #ddd, #bbb);"></div>
+  </div>
+
+</body>
+</html>
