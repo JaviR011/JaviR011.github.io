@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Título y texto animado</title>
+  
+  <title>Página con botón flotante</title>
   <style>
     body {
       height: 300vh;
       margin: 0;
       font-family: Arial, sans-serif;
-      background: rgb(26, 26, 26);
+      background: rgb(34, 34, 34);
       transition: background 0.5s ease;
       display: flex;
       flex-direction: column;
@@ -17,13 +18,34 @@
       overflow-x: hidden;
     }
 
-  .landscape {
+    /* Botón flotante arriba a la derecha */
+    .btn-random {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 50;
+      background-color: #ff0055;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-random:hover {
+      background-color: #41071d;
+    }
+
+    .landscape {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 800px;
-  height: 800px;
-  background-image: url('fondo.jpg');
+  width: 400px;
+  height: 400px;
+  background-image: url('hello.gif');
   background-size: cover;
   background-position: center;
   border-radius: 20px;
@@ -33,19 +55,18 @@
   pointer-events: none;
 }
 
-    /* Contenedor de texto (título + párrafo) */
+    /* Contenedor de texto */
     .text-container {
       margin-top: 100px;
       text-align: center;
       max-width: 600px;
       z-index: 10;
       position: relative;
+      color: white;
     }
 
-    /* Título */
     h1 {
       font-size: 3rem;
-      color: aliceblue;
       opacity: 0;
       transform: translateY(50px);
       transition:
@@ -55,7 +76,6 @@
       margin-bottom: 20px;
     }
 
-    /* Párrafo */
     p {
       font-size: 1.25rem;
       color: #333;
@@ -67,14 +87,12 @@
       margin: 0;
     }
 
-    /* Estado visible */
     h1.visible,
     p.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Celular fijo abajo */
     .phone-container {
       position: fixed;
       bottom: 50px;
@@ -104,7 +122,7 @@
       left: 10px;
       right: 10px;
       bottom: 20px;
-      background: #0f0;
+      background: rgb(89, 255, 227);
       border-radius: 12px;
     }
 
@@ -115,12 +133,14 @@
 </head>
 <body>
 
+  <button class="btn-random" id="btnRandom" >CLIC AQUI</button>
+
   <div class="landscape"></div>
 
   <div class="text-container">
-    <h1 id="titulo">Bienvenido a la Página</h1>
-    <p id="texto">   
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27257.717665038977!2d-99.20575806467912!3d19.321686792515877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce000920979a1b%3A0x7c9f3c0207ba804d!2sC.U.%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e1!3m2!1ses!2smx!4v1748551058389!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h1 id="titulo">:3</h1>
+    <p id="texto"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5LrN7yUQAzvthd4QujgPFr?utm_source=generator" width="500" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/26hOm7dTtBi0TdpDGl141t?utm_source=generator" width="500" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </p>
   </div>
 
@@ -131,7 +151,16 @@
       <div class="phone-screen"></div>
     </div>
   </div>
-
+<img src="NEKOARC.jpg" id="mauseFollower" style="
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  " alt="Mause que sigue el cursor" />
   <script>
     const titulo = document.getElementById('titulo');
     const texto = document.getElementById('texto');
@@ -176,8 +205,8 @@
       const translateX = scrollPercent * maxTranslateX;
       phone.style.transform = `translateX(${translateX}px)`;
 
-      const colorStart = [26, 26, 26];
-      const colorEnd = [255, 0, 66];
+      const colorStart = [34, 34, 34];
+      const colorEnd = [250, 63, 100];
 
       const colorActual = lerpColor(colorStart, colorEnd, scrollPercent);
       document.body.style.background = rgbToString(colorActual);
@@ -189,6 +218,19 @@
       moverCelularYfondo();
     });
     window.addEventListener('load', moverCelularYfondo);
+
+    // Redirección al hacer click en el botón
+    const btnRandom = document.getElementById('btnRandom');
+    btnRandom.addEventListener('click', () => {
+  window.open('https://theuselessweb.com/', '_blank');
+});
+
+const mauseFollower = document.getElementById('mauseFollower');
+
+    window.addEventListener('mousemove', e => {
+      mauseFollower.style.top = `${e.clientY}px`;
+      mauseFollower.style.left = `${e.clientX}px`;
+    });
   </script>
 </body>
 </html>
