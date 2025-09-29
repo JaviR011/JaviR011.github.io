@@ -148,6 +148,8 @@ main{ scroll-snap-type: y mandatory; overscroll-behavior-y: contain; }
 
 /* ============= MODO MÓVIL (≤768px) ============= */
 @media (max-width: 768px){
+  main .viewport{ grid-template-columns:1fr; grid-template-areas:"stack"; }
+  main .col{ grid-area:stack; }
   .viewport{
     /* Una sola columna, y superponemos col--left y col--right en la MISMA celda */
     grid-template-columns: 1fr;
