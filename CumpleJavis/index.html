@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styleforms.css">
+<script src="script.js" defer></script>
+
+<title>Cumpleaños de Javis</title>
+<style>
+  
+</style>
+</head>
+<body>
+
+<main id="scrollHost">
+  <!-- VISOR STICKY (se “queda quieto”) -->
+  <div class="viewport" id="viewport">
+    <!-- COLUMNA IZQUIERDA: C1, C3, C5, C7... (entran desde la IZQUIERDA) -->
+    <section class="col col--left" aria-label="Columna izquierda">
+      <article class="frame" id="col1"><h3 class="tituloCumple1">Te invito a Celebrar</h3> <img class="cumplefoto" src="cumple.png" alt=""><p class="subtituloCumple1" >Mi 
+Cumpleaños</p> <p class="numerosCumple1">22</p></article>
+      <article class="frame" id="col3"><h3 class="tituloCumple3"> Ubicacion</h3> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d620.7798463904575!2d-99.2140231283267!3d19.38193808217507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2004acb863eb1%3A0x709dcaca7ab5f4a4!2sHernando%20de%20Soto%2C%20Lomas%20de%20Cap%C3%BAla%2C%2001270%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1759117647774!5m2!1ses-419!2smx" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1759118304004!6m8!1m7!1sPFlE_dYE2f9uZmiSJSaQlg!2m2!1d19.38192536402271!2d-99.2136787837442!3f4.837763559359276!4f8.283949427175983!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="muted"></p></article>
+     <!-- 
+     
+        <article class="frame" id="col5"><h3>C5</h3><p class="muted">Siguiente capa izquierda.</p></article>
+      <article class="frame" id="col7"><h3>C7</h3><p class="muted">Última capa izquierda.</p></article>
+      -->
+    </section>
+
+    <!-- COLUMNA DERECHA: C2, C4, C6, C8... (entran desde la DERECHA) -->
+    <section class="col col--right" aria-label="Columna derecha">
+      <article class="frame" id="col2" ><h3 class="tituloCumple2">El Dia </h3> <img src="calendiario.jpg" width="45%" ><p class="subtituloCumple2">a partir de las 10 am</p></article>
+      <article class="frame" id="col4" ><h3 class="tituloCumple4">Confirma tu asistencia aqui</h3>
+        
+    <section class="rsvp">
+  
+ <div class="gform-embed">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdgkkwinmhBGpujVlkmeNxkN2U8aLoua1K2aX5Ouez-L3D46Q/viewform?embedded=true"
+      loading="lazy"
+      title="Confirmación de Asistencia">   
+    </iframe>
+  </div></section>
+  </div>
+
+  <!-- STEPS: un step por “cambio de par” -->
+  <section class="step" aria-hidden="true"></section>
+  <section class="step" aria-hidden="true"></section>
+</main>
+
+</body>
+</html>

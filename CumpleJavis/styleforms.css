@@ -1,0 +1,26 @@
+/* Contenedor visual */
+.rsvp{
+  background:
+    radial-gradient(600px 300px at 100% 0%, #c7fdfe 0%, transparent 60%),
+    radial-gradient(600px 300px at   0% 100%, #e9d5ff 0%, transparent 60%),
+    #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 30px #0b122015;
+
+}
+
+/* Wrapper e iframe responsive */
+.rsvp .gform-embed{ width:100%; }
+.rsvp .gform-embed iframe{
+  display:block;
+  width:100%;
+  border:0;
+  /* Altura grande para evitar scroll interno del iframe */
+  height: clamp(100px, 90vh, 620px);
+}
+
+/* En móviles, dale aún más alto si hace falta */
+@media (max-width: 600px){
+  .rsvp .gform-embed iframe{ height: 80%; }
+}

@@ -1,0 +1,139 @@
+:root{
+  --gap: 28px;
+  --pad: 32px;
+
+  /* Intensidad de efecto al cruzar */
+  --blur-max: 2px;   /* 0 para quitar blur */
+  --scale-max: .02;  /* 0 para quitar zoom sutil */
+}
+
+/* Reset básico */
+*{ box-sizing:border-box; }
+html, body{ height:100%; margin:0; }
+body{ font-family: system-ui, Arial, sans-serif; background:#fff; color:#111; }
+
+/* El scroll vive aquí (los .step dan altura) */
+main{ scroll-snap-type: y mandatory; overscroll-behavior-y: contain; }
+
+/* Visor fijo a pantalla completa con 2 columnas */
+.viewport{
+  position: sticky; top:0; height:100vh;
+  display:grid; grid-template-columns:1fr 1fr; gap:var(--gap);
+  padding:var(--pad);
+  background:#fff0e7; /* color base del lienzo */
+  /* Si prefieres gradiente suave: 
+  background: linear-gradient(180deg, #F7FAFF 0%, #FFF8FB 60%, #F7FAFF 100%); */
+}
+
+/* Cada columna es un “escenario” con capas apiladas */
+.col{
+  position: relative; overflow:hidden;
+  border-radius:16px;
+  border:1px solid #fff0e7;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  background:#fff0e7; /* color de fondo si no hay frame encima */
+}
+
+/* Un frame ocupa toda la columna y se apila (absolute) */
+.frame{
+  position:absolute; inset:0; padding:24px;
+  border-radius:16px;
+  text-align:center;
+
+  /* Animación controlada por JS */
+  opacity: var(--o, 0); /* 0..1 */
+  transform: translateX(var(--x, 0px)) scale(calc(1 - (1 - var(--o)) * var(--scale-max)));
+  filter: blur(calc((1 - var(--o)) * var(--blur-max)));
+  will-change: opacity, transform, filter;
+  transition: opacity 0s linear, transform 0s linear, filter 0s linear; /* ligado al scroll */
+
+  /* Interacción: por defecto ningún frame recibe eventos */
+  pointer-events: none;
+}
+/* Solo el frame marcado como activo recibe interacción (clics, scroll, inputs, iframe) */
+.frame[data-active="true"]{
+  pointer-events: auto;
+  z-index: 999; /* queda por encima mientras está activo */
+}
+/* (Opcional) ocultar a lectores de pantalla los no activos */
+.frame[aria-hidden="true"]{ visibility: hidden; }
+
+/* Iframes a tamaño completo dentro del frame (ej. Google Maps) */
+.frame iframe{ width:90%; height:40%; border:0; padding: 10px; border-radius: 30px; }
+
+/* Altura de cada “paso” (uno por par nuevo) */
+.step{ height:100vh; scroll-snap-align:start; }
+.cumplefoto{ width:50%; border-radius:30px; }
+/* Accesibilidad: si el usuario reduce movimiento, deja todo visible SIN animación */
+@media (prefers-reduced-motion: reduce){
+  .frame{ opacity:1 !important; transform:none !important; filter:none !important; }
+}
+
+/* ====== Fondos por frame (C1..C8) ======
+   Aplica estos IDs en CADA .frame correspondiente (no en .col) */
+#col1{ background:#d7f3fc; padding:100px; text-align:center; }
+#col2{ background:#FFD0D0; }
+#col3{ background:#d9fede; }
+#col4{ background:#f4dbff; }
+#col5{ background:#FFD0D0; }
+#col6{ background:#D0FFF4; }
+#col7{ background:#F0F0F0; }
+#col8{ background:#D0D0FF; }
+
+/* ====== Tipografías de títulos ====== */
+.tituloCumple1{ font-family:'sunshine-festival'; font-size:60px; color:#000; margin:10px; }
+.subtituloCumple1{ font-family:'pwhappynewyear', cursive; font-size:100px; color:#000; margin:0 0 8px; padding:20px; }
+.numerosCumple1{ font-family:'numerosB'; font-size:100px; color:#000; margin:0 0 8px; }
+
+.tituloCumple2{ font-family:'butterfly-kids'; font-size:80px; color:#000; margin:10px; }
+.subtituloCumple2{ font-family:'sunshine-festival', cursive; font-size:60px; color:#000; margin:0 0 8px; padding:20px; }
+
+.tituloCumple3{ font-family:'thanksgiving_joy'; font-size:100px; color:#000; margin:10px; }
+.subtituloCumple3{ font-family:'Happy_Birthday', cursive; font-size:40px; color:#000; margin:0 0 8px; padding:20px; }
+
+.tituloCumple4{ font-family:'thanksgiving_joy', cursive; font-size:60px; color:#000; margin:10px; }
+.subtituloCumple4{ font-family:'Happy_Birthday', cursive; font-size:30px; color:#000; margin:0 0 8px; padding:20px; }
+.frame h3{ margin:0 0 8px; }
+.muted{ opacity:.8; }
+
+.tituloCumple1, .subtituloCumple1, .numerosCumple1, .tituloCumple2, .subtituloCumple2{
+  line-height:1.05;
+}
+.iframe{ background-color: #f8f9ea;}
+/* ====== Fuentes locales (@font-face) ====== */
+/* Ideal: servir también .woff2 primero por rendimiento */
+@font-face {
+  font-family: 'Happy_Birthday';
+  src: url("happy_birthday_3/HappyBirthday-Regular.ttf") format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'party_Day';
+  src: url("party_day/PartyDayDemoRegular.ttf") format('truetype');
+  font-display: swap;
+}
+@font-face  {
+  font-family: 'pwhappynewyear';
+  src: url("pwhappynewyear/PWHappyNewYear.ttf") format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'sunshine-festival';
+  src: url("sunshine-festival/Sunshine%20Festival.otf") format('opentype'); /* ojo con el espacio */
+  font-display: swap;
+}
+@font-face {
+  font-family: 'thanksgiving_joy';
+  src: url("thanksgiving_joy/ThanksgivingJoy.ttf") format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'numerosB';
+  src: url("numerosB/BirthdayDigits.ttf") format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'butterfly-kids';
+  src: url("butterfly-kids/ButterflyKids-Regular.ttf") format('truetype');
+  font-display: swap;
+}
