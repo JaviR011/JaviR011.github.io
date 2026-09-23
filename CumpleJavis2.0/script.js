@@ -43,7 +43,7 @@ if(glow)addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.s
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 document.querySelectorAll('.observe').forEach(el=>observer.observe(el));
 
-// Fecha tentativa: 17 de octubre de 2026. Cambia la hora aquí cuando esté confirmada.
+
 const partyDate=new Date('2026-10-17T18:00:00-06:00');
 const $=id=>document.getElementById(id);
 function countdown(){
@@ -54,3 +54,31 @@ function countdown(){
   $('days').textContent=String(d).padStart(2,'0');$('hours').textContent=String(h).padStart(2,'0');$('mins').textContent=String(m).padStart(2,'0');$('secs').textContent=String(s).padStart(2,'0');
 }
 countdown();setInterval(countdown,1000);
+
+// =====================================
+// MÚSICA DE FONDO
+// =====================================
+
+const bgMusic = document.getElementById("bgMusic");
+
+bgMusic.volume = 0.35;
+
+async function iniciarMusica() {
+    if (!bgMusic.paused) return;
+
+    try {
+        await bgMusic.play();
+        console.log("🎃 Música iniciada");
+    } catch (error) {
+        console.log("Autoplay bloqueado. Esperando interacción...");
+    }
+}
+
+// Intento automático
+window.addEventListener("load", iniciarMusica);
+
+// Si el navegador bloquea autoplay,
+// arrancará en la primera interacción permitida.
+["click", "touchstart", "keydown", "pointerdown"].forEach(evento => {
+    document.addEventListener(evento, iniciarMusica, { once: true });
+});
