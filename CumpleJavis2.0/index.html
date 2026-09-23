@@ -1,1 +1,130 @@
-#
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#09070b">
+  <meta name="description" content="Javi's 23 — Fiesta de cumpleaños temática de Halloween y concurso de tallar calabazas.">
+  <title>Javi's 23 — Halloween Birthday Party</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="mini-nav">
+    <a class="brand" href="#inicio">JAVI'S <b>23</b></a>
+    <div class="nav-right"><span>17 · OCT · 2026</span><a href="#rsvp">RSVP</a></div>
+  </header>
+
+  <main>
+    <section class="hero scroll-scene" id="inicio" data-scene="hero">
+      <div class="sticky-stage">
+        <div class="moon" aria-hidden="true"></div>
+        <div class="stars" aria-hidden="true"></div>
+        <div class="ghost ghost-a" aria-hidden="true"><i></i><i></i></div>
+        <div class="ghost ghost-b" aria-hidden="true"><i></i><i></i></div>
+        <div class="hero-copy">
+          <p class="eyebrow reveal">ESTÁS OFICIALMENTE INVITADO</p>
+          <h1><span>TE INVITO A</span><strong>MI CUMPLEAÑOS</strong></h1>
+          <div class="hero-age"><span>JAVI'S</span><b>23</b></div>
+          
+        </div>
+        <div class="pumpkin pumpkin-hero" aria-hidden="true"><div class="stem"></div><div class="face"><i></i><i></i><b></b></div></div>
+        <div class="scroll-cue"><span>SCROLL PARA ENTRAR</span><i></i></div>
+      </div>
+    </section>
+
+    <section class="contest scroll-scene" id="concurso" data-scene="contest">
+      <div class="sticky-stage contest-stage">
+        <div class="big-outline" aria-hidden="true">HALLOWEEN</div>
+        <div class="contest-copy">
+          <p class="eyebrow">EVENTO PRINCIPAL:</p>
+          <h2><span>CONCURSO DE</span><strong>TALLAR</strong><strong>CALABAZAS</strong></h2>
+  
+          <p class="lead">Habrá premios para los tres primeros lugares. <br> <strong>¡No olvides traer tu calabaza!</strong> <br>Puede ser de cualquier tamaño, forma o color. <br> (PUEDES TRAER FRUTAS O VERDURAS QUE NO SEAN CALABAZAS XD)</p>
+
+        </div>
+        <div class="pumpkin pumpkin-contest p1" aria-hidden="true"><div class="stem"></div><div class="face"><i></i><i></i><b></b></div></div>
+        <div class="pumpkin pumpkin-contest p2" aria-hidden="true"><div class="stem"></div><div class="face cute"><i></i><i></i><b></b></div></div>
+        <div class="pumpkin pumpkin-contest p3" aria-hidden="true"><div class="stem"></div><div class="face"><i></i><i></i><b></b></div></div>
+      </div>
+    </section>
+
+    <section class="costume" id="disfraz">
+      <div class="costume-card observe">
+        <div class="boo" aria-hidden="true">BOO!</div>
+        <div>
+          <p class="eyebrow">DRESS CODE · OPCIONAL, PERO...</p>
+          <h2>VEN <em>DISFRAZADO</em></h2>
+          <p class="lead">Habrá un pequeño <strong>recuerdo para quienes vengan disfrazados.</strong></p>
+        </div>
+        <div class="sheet-ghost" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-head observe">
+        <p class="eyebrow"> ¿QUE HAY DE COMER?</p>
+        <h2>THE <span>HALLOWEEN</span> MENU</h2>
+      </div>
+      <div class="menu-marquee" aria-hidden="true"><div>PIZZA · ESQUITES · PAN DE MUERTO · ATOLE · GALLETAS · SPAGHETTI ·&nbsp;</div></div>
+      <div class="menu-grid">
+        <article class="food-card observe"><span class="food-icon">🍕</span><small>01</small><h3>Pizza</h3><p>del Costco</p></article>
+        <article class="food-card observe"><span class="food-icon">🌽</span><small>02</small><h3>Esquites</h3><p>calientitos</p></article>
+        <article class="food-card observe"><span class="food-icon">💀</span><small>03</small><h3>Pan de muerto</h3><p>porque octubre</p></article>
+        <article class="food-card observe"><span class="food-icon">☕</span><small>04</small><h3>Atole</h3><p>para el frío</p></article>
+        <article class="food-card observe"><span class="food-icon">🍪</span><small>05</small><h3>Galletas</h3><p>del Costco</p></article>
+        <article class="food-card observe"><span class="food-icon">🍝</span><small>06</small><h3>Spaghetti</h3><p>sí, también habrá</p></article>
+      </div>
+    </section>
+
+    <section class="date-scene scroll-scene" id="fecha" data-scene="date">
+      <div class="sticky-stage date-stage">
+        <p class="eyebrow">SAVE THE DATE · FECHA TENTATIVA</p>
+        <div class="date-number"><span>OCT</span><strong>17</strong><b>2026</b></div>
+        <p class="date-status">SÁBADO · 3pm</p>
+        <div class="countdown" id="countdown" aria-label="Cuenta regresiva">
+          <div><b id="days">--</b><span>DÍAS</span></div><div><b id="hours">--</b><span>HRS</span></div><div><b id="mins">--</b><span>MIN</span></div><div><b id="secs">--</b><span>SEG</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section" id="ubicacion">
+      <div class="location-copy observe">
+        <p class="eyebrow">DONDE PASA TODO</p>
+        <h2>LA <span>GUARIDA</span></h2>
+        <p>Lomas de Capúla · Álvaro Obregón · CDMX</p>
+        <a class="cta" href="https://www.google.com/maps/search/?api=1&query=19.38193808217507,-99.2140231283267" target="_blank" rel="noopener">ABRIR EN GOOGLE MAPS <span>↗</span></a>
+      </div>
+      <div class="map-wrap observe">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d620.7798463904575!2d-99.2140231283267!3d19.38193808217507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2004acb863eb1%3A0x709dcaca7ab5f4a4!2sHernando%20de%20Soto%2C%20Lomas%20de%20Cap%C3%BAla%2C%2001270%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1759117647774!5m2!1ses-419!2smx" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Ubicación de la fiesta"></iframe>
+      </div>
+    </section>
+
+    <section class="rsvp-section" id="rsvp">
+      <div class="rsvp-head observe"><p class="eyebrow"></p><h2>¿VIENES?</h2><br><p>Confirma tu asistencia en la encuesta. Es la forma más fácil de saber cuánta pizza comprar.</p></div>
+      <div class="form-shell observe">
+        <div class="form-top"><span></span><span></span><span></span><b>CONFIRMACIÓN DE ASISTENCIA</b></div>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdgkkwinmhBGpujVlkmeNxkN2U8aLoua1K2aX5Ouez-L3D46Q/viewform?embedded=true" loading="lazy" title="Confirmación de asistencia">Cargando…</iframe>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-ghost" aria-hidden="true">👻</div>
+      <p>SEE YOU ON THE OTHER SIDE</p>
+      <h2>JAVI'S 23</h2>
+      <span>17 · 10 · 2026 — CDMX</span>
+      <br><div class="nav-right"><a href="#inicio">VOLVER ARRIBA ↑</a></div>
+    </footer>
+  </main>
+
+  <audio autoplay loop>
+  <source src="tu-cancion.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+</body>
+
+
+</html>
